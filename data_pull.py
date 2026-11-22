@@ -1,12 +1,7 @@
-import io
-import pandas as pd
-import matplotlib.pyplot as plt
-import requests
 import os
 import json
+import requests
 from datetime import date as dt, timedelta
-import matplotlib.dates as mdates
-
 
 BTP_BUND_API_KEY = os.environ['CS_BTP_BUND_API_KEY]
 
