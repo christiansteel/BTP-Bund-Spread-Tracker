@@ -1,3 +1,6 @@
+import pandas as pd
+from data_pull import IT_data, DE_data
+
 df_DE = pd.DataFrame(DE_data['timeseries'])
 df_DE = df_DE.rename(columns={"yield": "BUND 10Y"})
 
