@@ -1,3 +1,7 @@
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from yield_spread_calc import df
+
 fig, ax = plt.subplots() 
 ax.plot(df['date'], df['Spread'])
 
