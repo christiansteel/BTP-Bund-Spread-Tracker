@@ -3,7 +3,7 @@ import json
 import requests
 from datetime import date as dt, timedelta
 
-BTP_BUND_API_KEY = os.environ['CS_BTP_BUND_API_KEY]
+BTP_BUND_API_KEY = os.environ['CS_BTP_BUND_API_KEY']
 
 from datetime import date as dt, timedelta
 end = dt.today()
