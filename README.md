@@ -1,6 +1,6 @@
 # BTP–Bund Spread Tracker
 
-Python project tracking the spread between Italian (BTP) and German (Bund) 10-year government bond yields, a key indicator of euro area sovereign risk.
+Python project tracking the spread between Italian (BTP) and German (Bund) 10-year government bond yields, a key indicator of Italy's sovereign risk.
 
 ![BTP-Bund spread chart](BTP-Bund.png)
 
