@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
+### main-spread 
 fig, (ax, ax2) = plt.subplots(2, 1, figsize=(10, 7), sharex=True,
                               gridspec_kw={"height_ratios": [3, 1]})
 
@@ -15,12 +16,11 @@ ax.text(0.5, 1.03, f"Latest Spread ({last_date}): {last_value} bp",
 
 ax.set_ylabel("Spread (bp)")
 
----------- Bottom: z-score ----------
+### z-score 
 ax2.plot(df["date"], df["Z-score"])
 ax2.axhline(0, color="grey", linewidth=0.6)
 ax2.set_ylabel("Z-score (60d)")
 
----------- Formatting ----------
 for a in (ax, ax2):
     a.yaxis.tick_right()
     a.yaxis.set_label_position("right")
