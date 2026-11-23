@@ -26,4 +26,4 @@ fig.text(0.345, 0.9, f"Latest Spread ({last_date}): {last_value} bp", fontsize=8
 ax.spines[["top", "left"]].set_visible(False)
 ax.spines[["bottom", "right"]].set_alpha(0.15)
 
-plt.show()
+fig.savefig("BTP-Bund.png", dpi=150)
