@@ -8,5 +8,13 @@ df_IT = pd.DataFrame(IT_data['timeseries'])
 df_IT = df_IT.rename(columns={"yield": "BTP 10Y"})
 
 df = df_DE.merge(df_IT,how='left',on='date')
+
+### yield spread calc
 df['Spread'] = ((df['BTP 10Y'] - df['BUND 10Y']) * 100).round(1)
 df["date"] = pd.to_datetime(df["date"])
+
+### z-score calc
+window = 60
+mean = df["Spread"].rolling(window).mean()
+std = df["Spread"].rolling(window).std()
+df["Z-score"] = (df["Spread"] - mean) / std
