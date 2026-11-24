@@ -1,8 +1,6 @@
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-import pandas as pd
-from datetime import date as dt, timedelta
-from yield_spread_calc import df as df
+from yield_spread_calc import hist_var,parm_var
 
 fig, (ax, ax2) = plt.subplots(2, 1, figsize=(10, 7), sharex=True,
                               gridspec_kw={"height_ratios": [3, 1]})
@@ -16,7 +14,7 @@ ax.set_title("BTP-Bund Yield Spread", pad=24)
 
 last_date = df["date"].iloc[-1].strftime("%d-%m-%Y")
 last_value = df["Spread"].iloc[-1]
-ax.text(0.5, 1.03, f"Latest Spread ({last_date}): {last_value} bp",
+ax.text(0.5, 1.03, f"Latest Spread ({last_date}): {last_value} bp | Historical VaR: €{hist_var:,.0f} | Parametric VaR is €{param_var:,.0f}",
         transform=ax.transAxes, ha="center", fontsize=8, color="grey")
 
 ax.set_ylabel("Spread (bp)")
