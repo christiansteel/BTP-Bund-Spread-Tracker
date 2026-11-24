@@ -3,11 +3,11 @@ import json
 import requests
 from datetime import date as dt, timedelta
 
-BTP_BUND_API_KEY = os.environ['CS_BTP_BUND_API_KEY']
+BTP_BUND_API_KEY = 'bnd_live_eMKTJrdgErooVgz9iqQ8QciAm9FgGlrsPCKkan7X'
 
 from datetime import date as dt, timedelta
 end = dt.today()
-start = end - timedelta(days=365)
+start = end - timedelta(days=465)
 
 timeseries_url = "https://bonds-api.com/api/v1/timeseries"
 
