@@ -1,5 +1,7 @@
 import pandas as pd
 from data_pull import IT_data, DE_data
+import numpy as np
+from scipy.stats import norm
 
 df_DE = pd.DataFrame(DE_data['timeseries'])
 df_DE = df_DE.rename(columns={"yield": "BUND 10Y"})
@@ -18,3 +20,17 @@ window = 60
 mean = df["Spread"].rolling(window).mean()
 std = df["Spread"].rolling(window).std()
 df["Z-score"] = (df["Spread"] - mean) / std
+
+### VaR calc
+df['PL'] = df['Spread'].diff() * - 10000
+df['gapdays'] = df['date'].diff().dt.days
+df = df[df['gapdays'] <= 4]
+df = df.drop(columns='gapdays')
+
+sample = df['PL'].iloc[-250:]
+
+hist_var = -np.percentile(sample, (1 - 0.99) * 100)
+
+param_var = -(sample.mean() + norm.ppf(1 - 0.99) * sample.std())
+
+display(df)
