@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+import pandas as pd
 from yield_spread_calc import hist_var,param_var
 
 fig, (ax, ax2) = plt.subplots(2, 1, figsize=(10, 7), sharex=True,
