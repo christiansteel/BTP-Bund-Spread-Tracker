@@ -32,5 +32,3 @@ sample = df['PL'].iloc[-250:]
 hist_var = -np.percentile(sample, (1 - 0.99) * 100)
 
 param_var = -(sample.mean() + norm.ppf(1 - 0.99) * sample.std())
-
-display(df)
